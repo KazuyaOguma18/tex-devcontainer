@@ -1,0 +1,8 @@
+# Force latexmk to use XeLaTeX for PDF generation
+$pdf_mode = 1;
+$pdflatex = 'xelatex %O %S';
+$clean_ext .= ' %R.xdv';
+
+# Place all build artifacts under ../out
+$aux_dir = '../out';
+$out_dir = '../out';
