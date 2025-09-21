@@ -1,6 +1,0 @@
-PWD /workspaces/tex-devcontainer
-INPUT /usr/local/texlive/2025/texmf.cnf
-INPUT /usr/local/texlive/2025/texmf-dist/web2c/texmf.cnf
-INPUT /usr/local/texlive/2025/texmf-var/web2c/xetex/xelatex.fmt
-INPUT project/main.tex
-OUTPUT out/main.log
