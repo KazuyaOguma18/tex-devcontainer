@@ -1,0 +1,14 @@
+# Fdb version 4
+["pdflatex"] 1758456922.08073 "project/main.tex" "out/main.pdf" "main" 1758456922.30997 2
+  "/usr/local/texlive/2025/texmf-dist/web2c/texmf.cnf" 1749313668 42213 4e2ca030e8e2640502016e9e45868dcb ""
+  "/usr/local/texlive/2025/texmf-var/web2c/xetex/xelatex.fmt" 1757894738 4427389 9b953ca6969c49fa6d1c2b6051dd11b3 ""
+  "/usr/local/texlive/2025/texmf.cnf" 1757893946.61769 455 5b996dcaa0eb4ef14a83b026bc0a008c ""
+  "IEEEtran.cls" 0 -1 0 ""
+  "out/IEEEtran.cls" 0 -1 0 ""
+  "out/main.aux" 1758456914.07998 32 3985256e7290058c681f74d7a3565a19 "pdflatex"
+  "project/main.tex" 1758456728.40528 2020 a93619ba8ffe744b783aa6c208682798 ""
+  (generated)
+  "out/main.aux"
+  "out/main.log"
+  "out/main.pdf"
+  (rewritten before read)

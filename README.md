@@ -42,13 +42,11 @@
    cp template/CLASSFILE.cls project/   # 例: cp template/IEEEtran.cls project/
    ```
 
-5. `project/` ディレクトリに移動して PDF をビルドし、内容を確認する。リポジトリには `latexmkrc` が含まれており、`latexmk` 実行時に自動で XeLaTeX を使用し、成果物を リポジトリ直下の `out/` ディレクトリへ出力するよう設定済みです。以下のコマンドブロックをコピー＆ペーストするだけでビルドが完了します。
+5. リポジトリ直下の `latexmkrc` は XeLaTeX を使うよう設定し、生成物を `out/` ディレクトリへ集約します。ルートで次のコマンドを実行すればローカル確認用 PDF が生成されます。
 
    ```bash
-   cd project
-   latexmk -C            # （初回や再ビルド前に）生成物をクリーンアップ
-   latexmk main.tex      # XeLaTeX で main.pdf を生成
+   latexmk -C project/main.tex   # （初回や再ビルド前に）生成物をクリーンアップ
+   latexmk project/main.tex      # XeLaTeX で out/main.pdf を生成
    ```
 
-   生成された PDF や補助ファイルは ルートの `out/` 以下に配置され、最終成果物は `out/main.pdf` になります。
-
+   `project/` に留まって作業したい場合は `latexmk -r ../latexmkrc main.tex` のように設定ファイルのパスを明示してください。生成された PDF や補助ファイルはリポジトリ直下の `out/` 以下に配置され、最終成果物は `out/main.pdf` になります。
