@@ -4,6 +4,12 @@ on:
   push:
     tags:
       - '*'
+  workflow_dispatch:
+    inputs:
+      engine:
+        description: 'LaTeX engine to use (pdflatex or xelatex)'
+        required: false
+        default: pdflatex
 
 permissions:
   contents: write
@@ -28,7 +34,7 @@ jobs:
         with:
           working_directory: .
           root_file: ${{ env.ROOT_TEX }}
-          latexmk_use_xelatex: true
+          latexmk_use_xelatex: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.engine == 'xelatex' }}
 
       - name: Upload PDF as workflow artifact
         uses: actions/upload-artifact@v4
