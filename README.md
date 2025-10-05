@@ -13,6 +13,7 @@
 ├── out/                      # latexmk 生成物
 ├── .github/                  # CI 設定（latex-engine.env 等）
 ├── .devcontainer/            # Dev Container 設定
+├── language_switch.sty       # 日英切替マクロ定義
 ├── latexmkrc                 # 共通ビルド設定（XeLaTeX デフォルト）
 └── README.md
 ```
@@ -38,9 +39,11 @@
   ```
 
 - CI（GitHub Actions）のビルドエンジンは `.github/latex-engine.env` 内の `LATEX_ENGINE` を変更して切り替えられます。`project/` 内で作業するときは `latexmk -r ../latexmkrc main.tex` のように設定ファイルを参照してください。
+- 日英を切り替える場合は、`project/main.tex` 冒頭で `\input{../language_switch.sty}` を読み込み、本文中は `\japanese{...}` / `\english{...}` を使ってそれぞれの言語表現を囲みます。出力したい言語は `\def\mylanguage{japanese}` や `english` に切り替えてビルドしてください。
 
 ### (2) コーディングエージェントで爆速執筆する場合
 - まず `outline.md` に章構成・要点・参考文献メモを整理します。
 - 利用したいクラスファイルやテンプレートがある場合は、ユーザーが事前に `template/` に配置しておきます。
 - エージェントには `outline-to-project.prompt.md` を読み込ませ、指示に従って `project/` 以下の LaTeX ファイルを生成・更新してもらいます。README ではなく、プロンプトファイルに詳細な手順・注意事項をまとめています。
+- バイリンガル出力が必要な場合もプロンプトに `language_switch.sty` の使い方が含まれているため、同ファイルを読み込ませるだけで `\english{}` / `\japanese{}` を使った原稿を生成できます。
 - 生成された差分を確認し、必要に応じて手動で修正してから上記と同じ `latexmk` コマンドでビルドします。
