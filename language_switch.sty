@@ -1,0 +1,13 @@
+\usepackage{ifthen}
+
+
+% デフォルトの言語を設定
+\def\mylanguage{japanese}
+
+% 英語と日本語のコマンドを定義
+\newcommand{\english}[1]{%
+  \ifthenelse{\equal{\mylanguage}{english}}{#1}{}
+}
+\newcommand{\japanese}[1]{%
+  \ifthenelse{\equal{\mylanguage}{japanese}}{#1}{}
+}

@@ -1,10 +1,22 @@
 % !TEX program = xelatex
 \documentclass[conference]{IEEEtran}
 
-% 日本語出力と XeLaTeX 対応設定
-\usepackage{xeCJK}
-\usepackage{fontspec}
-\setCJKmainfont{HaranoAjiMincho}
+% エンジンごとの設定を切り替え
+\usepackage{iftex}
+\ifXeTeX
+  % XeLaTeX: 日本語フォントを直接指定
+  \usepackage{xeCJK}
+  \usepackage{fontspec}
+  \setCJKmainfont{HaranoAjiMincho}
+\else
+  % pdfLaTeX: CJK パッケージで日本語を扱う
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{CJKutf8}
+  \usepackage{lmodern}
+  \AtBeginDocument{\begin{CJK*}{UTF8}{min}}
+  \AtEndDocument{\end{CJK*}}
+\fi
 
 % 数式・図表・参考文献などの標準パッケージ
 \usepackage{amsmath, amssymb}
