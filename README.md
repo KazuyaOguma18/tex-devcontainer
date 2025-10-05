@@ -50,4 +50,6 @@
    LATEXMK_ENGINE=pdflatex latexmk project/main.tex  # pdfLaTeX で生成したい場合
    ```
 
+   CI（GitHub Actions）で利用するエンジンは `.github/latex-engine.env` に記載した `LATEX_ENGINE` を編集して切り替えます。`pdflatex` / `xelatex` のいずれかを指定してください。
+
    `project/` に留まって作業したい場合は `latexmk -r ../latexmkrc main.tex` のように設定ファイルのパスを明示してください。生成された PDF や補助ファイルはリポジトリ直下の `out/` 以下に配置され、最終成果物は `out/main.pdf` になります。

@@ -4,12 +4,6 @@ on:
   push:
     tags:
       - '*'
-  workflow_dispatch:
-    inputs:
-      engine:
-        description: 'LaTeX engine to use (pdflatex or xelatex)'
-        required: false
-        default: pdflatex
 
 permissions:
   contents: write
@@ -26,6 +20,24 @@ jobs:
       - name: Check out repository
         uses: actions/checkout@v4
 
+      - name: Load LaTeX engine configuration
+        id: engine
+        run: |
+          engine_default=pdflatex
+          param_file=.github/latex-engine.env
+          if [ -f "$param_file" ]; then
+            engine_value=$(grep -E '^LATEX_ENGINE=' "$param_file" | tail -n1 | cut -d'=' -f2-)
+          fi
+          engine_value=${engine_value:-$engine_default}
+          case "$engine_value" in
+            pdflatex|xelatex) ;;
+            *)
+              echo "::warning::Unknown LATEX_ENGINE '$engine_value'; falling back to $engine_default" >&2
+              engine_value=$engine_default
+              ;;
+          esac
+          echo "engine=$engine_value" >> "$GITHUB_OUTPUT"
+
       - name: Prepare output directory
         run: mkdir -p out
 
@@ -34,7 +46,7 @@ jobs:
         with:
           working_directory: .
           root_file: ${{ env.ROOT_TEX }}
-          latexmk_use_xelatex: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.engine == 'xelatex' }}
+          latexmk_use_xelatex: ${{ steps.engine.outputs.engine == 'xelatex' }}
 
       - name: Upload PDF as workflow artifact
         uses: actions/upload-artifact@v4
