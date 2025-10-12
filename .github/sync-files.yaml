@@ -1,6 +1,6 @@
 - repository: KazuyaOguma18/tex-devcontainer
   files:
-    - source: .github/workflows/tagged-releas.yaml
+    - source: .github/workflows/tagged-release.yaml
     - source: .github/workflows/sync-files.yaml
     - source: .vscode/settings.json
     - source: .devcontainer/devcontainer.json
