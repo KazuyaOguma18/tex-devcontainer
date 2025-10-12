@@ -1,0 +1,12 @@
+- repository: KazuyaOguma18/tex-devcontainer
+  files:
+    - source: .github/workflows/tagged-releas.yaml
+    - source: .github/workflows/sync-files.yaml
+    - source: .vscode/settings.json
+    - source: .devcontainer/devcontainer.json
+    - source: .textlintrc
+    - source: latexmkrc
+    - source: outline-to-project.prompt.md
+    - source: package.json
+    - source: README.md
+      dest: README.template.md
