@@ -1,0 +1,11 @@
+{
+  "textlint.languages": [
+    "markdown",
+    "latex",
+    "plaintext",
+  ],
+  "textlint.autoFixOnSave": false,
+  "textlint.run": "onType",
+  "textlint.nodePath": "/workspaces/tex-devcontainer/node_modules",
+  "textlint.configPath": "/workspaces/tex-devcontainer/.textlintrc"
+}

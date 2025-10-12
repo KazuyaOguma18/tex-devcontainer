@@ -22,9 +22,10 @@
         "stkb.rewrap",
         "hediet.vscode-drawio",
         "jebbs.plantuml",
-        "taichi.vscode-textlint",
+        "3w36zj6.textlint",
         "ms-python.autopep8"
       ]
     }
-  }
+  },
+  "postCreateCommand": "npm install"
 }

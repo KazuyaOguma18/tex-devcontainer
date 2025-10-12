@@ -1,0 +1,19 @@
+{
+  "filters": {
+    "comments": true
+  },
+  "plugins": [
+      "latex2e"
+  ],
+  "rules": {
+    "preset-ja-technical-writing": {
+      "ja-no-mixed-period": {
+        "allowPeriodMarks": [".", ":", "："],
+        "allowEmphasizeMark": [",", "、"]
+      }
+    },
+    "write-good": {
+      "severity": "warning"
+    }
+  }
+}
