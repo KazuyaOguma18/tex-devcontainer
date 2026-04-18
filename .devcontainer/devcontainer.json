@@ -3,11 +3,11 @@
   "image": "mcr.microsoft.com/devcontainers/python:3",
   "features": {
     "ghcr.io/devcontainers-extra/features/apt-get-packages:1": {
-      "packages": "plantuml,graphviz,fonts-ipaexfont,cpanminus,librsvg2-bin"
+      "packages": "plantuml,graphviz,fonts-ipaexfont,cpanminus,librsvg2-bin,just"
     },
     "ghcr.io/prulloac/devcontainer-features/latex:1": {
       "scheme": "basic",
-      "packages": "latexindent,latexdiff,chktex,uplatex,pbibtex-base,biber,upmendex,texliveonfly,latexmk,tex-gyre,underscore,collection-langjapanese"
+      "packages": "latexindent,latexdiff,chktex,uplatex,pbibtex-base,biber,upmendex,texliveonfly,latexmk,tex-gyre,underscore,collection-langjapanese,ucs,booktabs,a4wide,vmargin,cjk,times,rsfs,caption,float"
     },
     "ghcr.io/devcontainers/features/node:1": {},
     "ghcr.io/devcontainers-extra/features/zsh-plugins:0": {
