@@ -25,7 +25,6 @@
 1. VS Code と拡張機能「Dev Containers」または「Remote-Containers」をインストールします。
 2. このリポジトリをクローンし、VS Code で開きます。
 3. 「Reopen in Container」を実行すると、開発環境が立ち上がります。
-4. `.devcontainer` を更新したあとは「Rebuild Container」を実行してください。`just` などのツール追加はこのタイミングで反映されます。
 
 初回ビルドには数分かかることがありますが、コンテナ構築後は同じイメージを再利用します。
 
